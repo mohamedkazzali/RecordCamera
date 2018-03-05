@@ -1,14 +1,15 @@
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'com.neenbedankt.android-apt'
+//apply plugin: 'kotlin-android'
+//apply plugin: 'com.neenbedankt.android-apt'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
+    apply from: 'dependencies.gradle'
+    compileSdkVersion compileSdkVersionExt
+    buildToolsVersion buildToolsVersionExt
     defaultConfig {
         applicationId "tech.thdev.recordcamera"
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
+        minSdkVersion minSdkVersionExt
+        targetSdkVersion targetSdkVersionExt
         versionCode 1
         versionName "1.0.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -19,24 +20,26 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    buildToolsVersion '26.0.0'
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile(rootProject.ext.espressoCore, {
+    androidTestCompile(espressoCore, {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    testCompile rootProject.ext.junit
+    testCompile junit
 
-    compile rootProject.ext.appcompat_v7
-    compile rootProject.ext.design
+    compile appcompat_v7
+    compile design
 
     // ButterKnife
-    compile rootProject.ext.butterKnife
-    apt rootProject.ext.butterKnifeCompiler
+    compile butterKnife
+    annotationProcessor butterKnifeCompiler
 
     // Kotlin
-    compile rootProject.ext.kotlin
+    compile kotlin
 
-    compile rootProject.ext.base
+    compile base
+
 }
