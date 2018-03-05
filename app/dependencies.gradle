@@ -1,0 +1,63 @@
+ext {
+    // Build SDK version
+    compileSdkVersionExt = 26
+    buildToolsVersionExt = '27.0.1'
+    targetSdkVersionExt = 26
+    minSdkVersionExt = 21
+
+
+    // Dependencies version
+    baseLibrary = '1.0.3'
+
+    supportLibraryVersion = '24.2.0'
+
+    // Bind view
+    butterKnifeVersion = '8.4.0'
+
+    kotlin_version = '1.0.3'
+
+    // Testing-only
+    junitLibVersion = '4.12'
+    testLibVersion = '0.5'
+    espressoLibVersion = '2.2.2'
+    dexmakerVersion = '1.4'
+    uiautomatorLibVersion = '2.1.2'
+
+    // my base
+    base = "tech.thdev.support:base:$ext.baseLibrary"
+
+    // Support library Dependencies
+    appcompat_v7 = "com.android.support:appcompat-v7:$ext.supportLibraryVersion"
+    design = "com.android.support:design:$ext.supportLibraryVersion"
+
+    // ButterKnife
+    butterKnife = "com.jakewharton:butterknife:$ext.butterKnifeVersion"
+    butterKnifeCompiler = "com.jakewharton:butterknife-compiler:$ext.butterKnifeVersion"
+
+    // Kotlin
+    kotlin = "org.jetbrains.kotlin:kotlin-stdlib:$ext.kotlin_version"
+
+    // RX
+    // https://github.com/ReactiveX/RxAndroid
+    rxAndroid = 'io.reactivex:rxandroid:1.2.1'
+    rxJava = 'io.reactivex:rxjava:1.1.6'
+
+
+    // Testing-only dependencies
+    junit = "junit:junit:$ext.junitLibVersion"
+
+    testRunner = "com.android.support.test:runner:$ext.testLibVersion"
+    testRules = "com.android.support.test:rules:$ext.testLibVersion"
+
+    espressoCore = "com.android.support.test.espresso:espresso-core:$ext.espressoLibVersion"
+    espressoWebView = "com.android.support.test.espresso:espresso-web:$ext.espressoLibVersion"
+
+    // add this for intent mocking support
+    espressoIntents = "com.android.support.test.espresso:espresso-intents:$ext.espressoLibVersion"
+
+    // Set this dependency to build and run UI Automator tests
+    uiautomatorLib = "com.android.support.test.uiautomator:uiautomator-v18:$ext.uiautomatorLibVersion"
+
+    dexmakerMockito = "com.crittercism.dexmaker:dexmaker-mockito:$ext.dexmakerVersion"
+    awaitility = 'com.jayway.awaitility:awaitility:1.7.0'
+}
